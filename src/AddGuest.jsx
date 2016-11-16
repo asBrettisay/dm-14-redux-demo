@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+
+import {addGuest} from './redux/party.js';
+
+import store from './store.js';
 
 class AddGuest extends Component {
   constructor(props) {
@@ -22,7 +27,10 @@ class AddGuest extends Component {
   handleAddGuest() {
     // Notify parent component that we
     // have a new guest.
+    // store.dispatch(addGuest(this.state.newGuest));
     this.props.addGuest(this.state.newGuest);
+
+
     this.setState({
       newGuest: ''
     })
@@ -43,4 +51,4 @@ class AddGuest extends Component {
   }
 }
 
-export default AddGuest
+export default connect(null, {addGuest})(AddGuest)
