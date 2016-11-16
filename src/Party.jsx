@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import GuestList from './GuestList.jsx';
 import AddGuest from './AddGuest.jsx';
 
+import './Party.scss';
+
 class Party extends Component {
   constructor(props) {
     super(props)
@@ -23,7 +25,7 @@ class Party extends Component {
 
   render() {
     return (
-      <div>
+      <div className="party-container">
         <GuestList 
           guests={this.state.guests}/>
         <AddGuest 

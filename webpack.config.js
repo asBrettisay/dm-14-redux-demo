@@ -10,12 +10,12 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         loader: 'babel?cacheDirectory'
       },
       {
-        test: /\.css/,
-        loaders: ['style', 'css']
+        test: /\.(scss|css)$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
   }
